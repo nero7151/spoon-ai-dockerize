@@ -4,3 +4,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:nero7151/spoon-ai-frontend.git
+[submodule "ai-module"]
+	path = ai-module
+	url = git@hf.co:spaces/nero7151/SPOON-AI
