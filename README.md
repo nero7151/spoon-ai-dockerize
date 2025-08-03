@@ -1,2 +1,1 @@
-# spoon-ai-dockerize
-spoon ai project dockerize
+# SPOON-AI Dockerize Project

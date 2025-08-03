@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:nero7151/spoon-ai-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:nero7151/spoon-ai-frontend.git
