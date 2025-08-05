@@ -33,6 +33,18 @@ services:
       - /app/node_modules
     restart: unless-stopped
 
+  # ai-module:
+  #   build:
+  #     context: ./ai-module
+  #   container_name: spoon-ai-module
+  #   ports:
+  #     - "7860:7860" # FastAPI + GPT-2 service
+  #   volumes:
+  #     - ./ai-module:/app
+  #   restart: unless-stopped
+  #   environment:
+  #     - HF_HOME=/tmp/huggingface
+
 networks:
   default:
     name: spoon-network
