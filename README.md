@@ -3,7 +3,7 @@
 
 A comprehensive multi-service application featuring AI text generation capabilities, built with FastAPI, NestJS backend, Next.js frontend, and PostgreSQL database, all orchestrated with Docker Compose.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Architecture](#architecture)
@@ -15,7 +15,7 @@ A comprehensive multi-service application featuring AI text generation capabilit
 - [Troubleshooting](#troubleshooting)
 - [Production Deployment](#production-deployment)
 
-## 🎯 Project Overview
+## Project Overview
 
 This project consists of four main services:
 
@@ -24,7 +24,7 @@ This project consists of four main services:
 - **Frontend**: Next.js React application with TypeScript
 - **Database**: PostgreSQL database for data persistence
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -41,7 +41,7 @@ This project consists of four main services:
                        └─────────────────┘
 ```
 
-## 🔧 Prerequisites
+## Prerequisites
 
 Before starting, ensure you have the following installed on your system:
 
@@ -56,13 +56,13 @@ Before starting, ensure you have the following installed on your system:
 - **Storage**: At least 5GB free space
 - **CPU**: Multi-core processor recommended
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the Repository with Submodules
 
 ```bash
 # Clone the main repository
-git clone --recursive git@github.com:nero7151/spoon-ai-backend.git spoon-ai-dockerize
+git clone --recursive git@github.com:nero7151/spoon-ai-dockerize.git spoon-ai-dockerize
 cd spoon-ai-dockerize
 
 # If you already cloned without --recursive, initialize submodules
@@ -89,7 +89,7 @@ docker-compose ps
 - **AI Module**: http://localhost:7860
 - **Database**: localhost:5432
 
-## 📚 Detailed Setup Guide
+## Detailed Setup Guide
 
 ### Step 1: Initialize Git Submodules
 
@@ -165,7 +165,7 @@ docker-compose exec db psql -U spoon_db -d spoon_db
 docker-compose exec backend npm run migration:run
 ```
 
-## 🔍 Service Details
+## Service Details
 
 ### AI Module (FastAPI + GPT-2)
 
@@ -221,7 +221,7 @@ curl -X POST http://localhost:7860/generate \
   - Password: `password`
   - Database: `spoon_db`
 
-## 💻 Development Workflow
+## Development Workflow
 
 ### Starting Development
 
@@ -251,7 +251,7 @@ docker-compose up -d --build frontend
 # Access backend container
 docker-compose exec backend bash
 
-# Access frontend container  
+# Access frontend container
 docker-compose exec frontend sh
 
 # Access database
@@ -287,7 +287,7 @@ docker-compose exec ai-module pip install <package-name>
 docker-compose up -d --build ai-module
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -364,7 +364,7 @@ docker-compose up -d db
    docker-compose exec <service> ps aux  # Check running processes
    ```
 
-## 🚀 Production Deployment
+## Production Deployment
 
 ### Environment Preparation
 
@@ -434,7 +434,7 @@ docker-compose pull
 docker-compose up -d --build
 ```
 
-## 📞 Support
+## Support
 
 For issues and questions:
 
