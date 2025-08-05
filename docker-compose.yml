@@ -8,6 +8,8 @@ services:
       POSTGRES_DB: spoon_db
     ports:
       - "5432:5432"
+    volumes:
+      - spoon_db_data:/var/lib/postgresql/data
     restart: unless-stopped
   backend:
     build:
@@ -48,3 +50,6 @@ services:
 networks:
   default:
     name: spoon-network
+volumes:
+  spoon_db_data:
+    driver: local
