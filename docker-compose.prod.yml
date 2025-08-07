@@ -5,31 +5,21 @@ services:
       target: production
     environment:
       - NODE_ENV=production
-    volumes: []  # Remove development volumes
-    
+    volumes: [] # Remove development volumes
+
   frontend:
     build:
       context: ./frontend
       target: production
     environment:
       - NODE_ENV=production
-    volumes: []  # Remove development volumes
-
+    volumes: [] # Remove development volumes
   # ai-module:
   #   # Production settings for AI module
   #   environment:
   #     - HF_HOME=/tmp/huggingface
   #     - PYTHONPATH=/app
-    
-  db:
-    # Add persistent volume for production
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER:-spoon_db}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
-      - POSTGRES_DB=${POSTGRES_DB:-spoon_db}
 
-volumes:
-  postgres_data:
-    driver: local
+  # volumes:
+  #   postgres_data:
+  #     driver: local

@@ -3,13 +3,13 @@ services:
     image: postgres:latest
     container_name: spoon-db
     environment:
-      POSTGRES_USER: spoon_db
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: spoon_db
+      - POSTGRES_USER=${POSTGRES_USER:-spoon_db}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_DB=${POSTGRES_DB:-spoon_db}
     ports:
       - "5432:5432"
     volumes:
-      - spoon_db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
   backend:
     build:
@@ -34,7 +34,6 @@ services:
       - ./frontend:/app
       - /app/node_modules
     restart: unless-stopped
-
   # ai-module:
   #   build:
   #     context: ./ai-module
@@ -51,5 +50,5 @@ networks:
   default:
     name: spoon-network
 volumes:
-  spoon_db_data:
+  postgres_data:
     driver: local
