@@ -158,11 +158,11 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 ### Step 4: Initialize Database
 
 ```bash
-# Access the database container
-docker-compose exec db psql -U spoon_db -d spoon_db
+# Generate Prisma client
+docker-compose exec -it backend npx prisma generate
 
-# Run any initialization scripts (if available)
-docker-compose exec backend npm run migration:run
+# Run database migrations
+docker-compose exec backend npx prisma migrate deploy
 ```
 
 ## Service Details
